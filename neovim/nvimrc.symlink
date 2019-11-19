@@ -1,0 +1,318 @@
+""""""""""""""""""""""""""""""""
+" PACKAGE MANAGEMENT
+"
+""""""""""""""""""""""""""""""""
+set nocompatible
+set encoding=utf-8
+" set paste
+
+" vim-plug
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Core plugins
+Plug 'flazz/vim-colorschemes'
+
+" Vim main plugins
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-unimpaired'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-syntastic/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'rking/ag.vim'
+Plug 'sheerun/vim-polyglot'
+
+" Code Plugins
+Plug 'prettier/vim-prettier'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'tpope/vim-ragtag'
+Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'w0rp/ale'
+Plug 'vim-scripts/vim-auto-save'
+
+" Ctags
+Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+
+" Commenter
+Plug 'scrooloose/nerdcommenter'
+
+" Toggleble panels
+Plug 'scrooloose/nerdtree'
+
+" Language Vundles
+Plug 'othree/javascript-libraries-syntax.vim'
+
+" Themes
+Plug 'joshdick/onedark.vim'
+
+" Initialize plugin system
+call plug#end()
+
+
+""""""""""""""""""""""""""""""""
+"
+" SETTINGS & KEYBINDINGS
+"
+""""""""""""""""""""""""""""""""
+set expandtab
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set autoindent
+set smartindent
+set copyindent
+set relativenumber
+set number
+set numberwidth=5
+set ruler
+set hidden
+set ignorecase
+set smartcase
+set showmatch
+set incsearch
+" set hls
+set ls=2
+set cursorline
+set nowrap
+set backspace=indent,eol,start
+set textwidth=80
+set wildmenu
+set wildmode=list:longest,full
+" set completeopt -=preview
+set timeoutlen=1000 ttimeoutlen=0
+
+" Show trailing whitespaces
+set list listchars=tab:»·,trail:·,nbsp:·
+
+
+" Set <leader>
+let mapleader=","
+
+" Enable Mouse
+set mouse=a
+
+" Syntax highlighting
+syntax on
+" onedark.vim override: Don't set a background color when running in a terminal;
+" just use the terminal's background color
+" `gui` is the hex color code used in GUI mode/nvim true-color mode
+" `cterm` is the color code used in 256-color mode
+" `cterm16` is the color code used in 16-color mode
+if (has("autocmd") && !has("gui_running"))
+  augroup colorset
+    autocmd!
+    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
+  augroup END
+endif
+colorscheme onedark
+
+"Syntax
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" toggle syntastic
+nmap <leader>s :SyntasticToggleMode<cr>
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" airline
+if !exists("g:airline_symbols")
+  let g:airline_symbols = {}
+endif
+let g:airline_theme="powerlineish"
+" let g:airline_powerline_fonts=1
+" let g:airline#extensions#branch#empty_message  =  "no .git"
+" let g:airline#extensions#whitespace#enabled    =  0
+" let g:airline#extensions#syntastic#enabled     =  1
+" let g:airline#extensions#tabline#enabled       =  1
+" let g:airline#extensions#tabline#tab_nr_type   =  1 " tab number
+" let g:airline#extensions#tabline#fnamecollapse =  1 " /a/m/model.rb
+" let g:airline#extensions#hunks#non_zero_only   =  1 " git gutter
+
+" git gutter
+if exists('&signcolumn')  " Vim 7.4.2201
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
+
+" ignore files in ctrlp plugin
+" let g:ctrlp_user_command = 'find %s -type f | grep -v "node_modules/"'
+if exists("g:ctrl_user_command")
+  unlet g:ctrlp_user_command
+endif
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules/*
+
+" Multiple Cursors
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-g>'
+" let g:multi_cursor_prev_key='<C-p>'
+" let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+
+" better scrolling
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
+
+" scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" Delete
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" git and ack stuff
+let g:gitgutter_enabled = 1
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+nnoremap <leader>G mG:Git!
+nnoremap <leader>g :Git
+" nnoremap <leader>A :!ag
+nnoremap <leader>a :Ag 
+
+" Unimpaired.vim
+nnoremap <silent> [w :bprevious<CR>
+nnoremap <silent> ]w : bnext<CR>
+nnoremap <silent> [W :bfirst<CR>
+nnoremap <silent> ]W :blast<CR>
+
+" map closing brackets
+" imap {<Tab> {<CR>}<up><end><CR>
+" imap [<Tab> [<CR><CR>]<up><CR>
+" imap (<Tab> ()<left>
+
+" inoremap {<cr> {<cr>}<c-o>O<tab>
+" inoremap [<cr> [<cr>]<c-o>O<tab>
+" inoremap (<cr> (<cr>)<c-o>O<tab>
+
+" Commenter
+" Add spaces after comment delimiters by default
+" NERDTree config
+let NERDTreeShowHidden=1
+let g:NERDSpaceDelims = 1
+
+" auto start
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" auto close
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('ts', 'blue', 'none', 'blue', '#1e3799')
+call NERDTreeHighlightFile('tsx', 'blue', 'none', 'blue', '#1e3799')
+call NERDTreeHighlightFile('js', 'yellow', 'none', 'yellow', '#fa983a')
+call NERDTreeHighlightFile('jsx', 'yellow', 'none', 'yellow', '#fa983a')
+call NERDTreeHighlightFile('html', 'green', 'none', 'green', '#38ada9')
+call NERDTreeHighlightFile('md', 'grey', 'none', 'grey', '#3c6382')
+
+" Toggables without FN keys
+nnoremap <leader>5 :NERDTreeToggle<CR>
+" expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeFind<cr>
+
+""""""""""""""""""""""""""""""""
+"
+" COOL HACKS
+"
+""""""""""""""""""""""""""""""""
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-l> :call NumberToggle()<cr>
+
+let g:ragtag_global_maps=1
+
+" closetag
+let g:closetag_filenames = '*.html,*.ts,*.js'
+
+" auto-paris
+" let g:AutoPairsFlyMode = 1
+
+" ctrlp
+" Ignore files in .gitignore
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Tagbar
+" nmap <C-D> :TagbarToggle<CR>
+
+" ag
+let g:ackprg = 'ag --vimgrep'
+
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+let g:ale_completion_enabled = 1
+let g:ale_set_balloons = 1
+
+" fzf
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+nmap <Leader>f :GFiles<CR>
+nmap <Leader>F :Files<CR>
+nmap <Leader>b :Buffers<CR>
+nmap <Leader>h :History<CR>
+nmap <Leader>t :BTags<CR>
+nmap <Leader>T :Tags<CR>
+nmap <Leader>l :BLines<CR>
+nmap <Leader>L :Lines<CR>
+nmap <Leader>' :Marks<CR>'
+" nmap <Leader>w :
+
+" git gutter
+set updatetime=100
+
+" auto save
+" let g:auto_save = 1  " enable AutoSave on Vim startup
+" let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+
+" Copy + Paste
+vnoremap <C-c> "+y
+map <C-p> "+p
