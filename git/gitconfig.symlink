@@ -41,5 +41,7 @@
 [user]
 	name = obrin
 	email = jordanyong23@gmail.com
+[includeIf "gitdir:~/code/wayfair/"]
+        path = ~/code/wayfair/.gitconfig
 [url "git@github.com:"]
 	insteadOf = https://github.com/
