@@ -45,3 +45,5 @@
         path = ~/code/wayfair/.gitconfig
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[http]
+	postBuffer = 524288000

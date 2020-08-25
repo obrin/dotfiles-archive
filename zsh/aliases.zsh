@@ -4,4 +4,8 @@ alias cls='clear' # Good 'ol Clear Screen command
 
 alias ctags="`brew --prefix`/bin/ctags"
 
+alias k="kubectl"
+
+alias v="nvim"
+
 # alias timeout="`gtimeout`"

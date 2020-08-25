@@ -14,7 +14,6 @@ alias gp='git push origin HEAD'
 # Remove `+` and `-` from start of diff lines; just rely upon color.
 alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
 
-
 alias gcb='git copy-branch-name'
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
@@ -36,6 +35,7 @@ alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge --no-ff'
 alias gp='git pull'
 alias gpom='git pull origin master'
+alias gpo='git push origin "$(git symbolic-ref --short HEAD)"'
 alias gss='git status -sb'
 alias gst='git stash'
 alias gstl='git stash list'
