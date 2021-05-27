@@ -39,6 +39,9 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+# garden.io
+export PATH=$PATH:$HOME/.garden/bin
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /Users/jordanyong/code/iflix/amplitude-forwarder/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jordanyong/code/iflix/amplitude-forwarder/node_modules/tabtab/.completions/serverless.zsh
