@@ -8,4 +8,6 @@ alias k="kubectl"
 
 alias v="nvim"
 
+alias c="code-insiders"
+
 # alias timeout="`gtimeout`"
