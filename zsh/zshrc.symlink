@@ -32,28 +32,6 @@ unset config_files
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Buildpack
-. $(pack completion --shell zsh)
-
 # NVM
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
-# garden.io
-export PATH=$PATH:$HOME/.garden/bin
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/jordanyong/code/iflix/amplitude-forwarder/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jordanyong/code/iflix/amplitude-forwarder/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/jordanyong/code/iflix/amplitude-forwarder/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jordanyong/code/iflix/amplitude-forwarder/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/jordanyong/code/iflix/amplitude-forwarder/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/jordanyong/code/iflix/amplitude-forwarder/node_modules/tabtab/.completions/slss.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jy950f/code/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jy950f/code/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jy950f/code/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jy950f/code/google-cloud-sdk/completion.zsh.inc'; fi
