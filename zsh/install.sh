@@ -13,6 +13,10 @@ if [ ! -d $PLUGINS_DIR/zsh-z ]; then
   sh -c "$(git clone https://github.com/agkozak/zsh-z $PLUGINS_DIR/zsh-z)"
 fi
 
+if [ ! -d $PLUGINS_DIR/zsh-syntax-highlighting ]; then 
+  sh -c "$(git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGINS_DIR/zsh-syntax-highlighting)"
+fi
+
 # THEMES
 THEMES_DIR=$CUSTOM_DIR/themes
 
