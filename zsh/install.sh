@@ -4,10 +4,18 @@ if [ ! -d $ZSH ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-export PLUGINS_DIR=$HOME/.oh-my-zsh/custom/plugins
+CUSTOM_DIR=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}
 
-ZSH_Z=$PLUGINS_DIR/zsh-z
+# PLUGINS
+PLUGINS_DIR=$CUSTOM_DIR/plugins
 
-if [ ! -d $ZSH_Z ]; then 
-  sh -c "$(git clone https://github.com/agkozak/zsh-z $ZSH_Z)"
+if [ ! -d $PLUGINS_DIR/zsh-z ]; then 
+  sh -c "$(git clone https://github.com/agkozak/zsh-z $PLUGINS_DIR/zsh-z)"
+fi
+
+# THEMES
+THEMES_DIR=$CUSTOM_DIR/themes
+
+if [ ! -d $THEMES_DIR/powerlevel10k ]; then 
+  sh -c "$(git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $THEMES_DIR/powerlevel10k)"
 fi

@@ -42,3 +42,6 @@ brew 'pyenv'
 # PHP
 brew 'composer'
 
+# Font
+tap 'homebrew/cask-fonts'
+cask 'font-hack-nerd-font'
