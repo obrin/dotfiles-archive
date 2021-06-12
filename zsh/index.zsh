@@ -8,7 +8,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf zsh-nvm z zsh-autosuggestions)
+plugins=(fzf zsh-nvm zsh-z zsh-autosuggestions zsh-interactive-cd)
 
 # Python
 eval $(pyenv init --path)
