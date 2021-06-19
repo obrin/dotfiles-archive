@@ -38,6 +38,7 @@ brew 'fd' # alternative to find
 #brew 'redis'
 brew 'minikube'
 brew 'pyenv'
+brew 'jenv'
 
 # PHP
 brew 'composer'
