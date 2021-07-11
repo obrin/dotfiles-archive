@@ -39,6 +39,8 @@ brew 'fd' # alternative to find
 brew 'minikube'
 brew 'pyenv'
 brew 'jenv'
+tap 'AdoptOpenJDK/openjdk'
+brew 'adoptopenjdk/openjdk/adoptopenjdk11'
 
 # PHP
 brew 'composer'
