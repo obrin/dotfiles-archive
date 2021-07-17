@@ -12,4 +12,4 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(fzf zsh-nvm zsh-z zsh-autosuggestions zsh-syntax-highlighting jenv)
 
 # Python
-eval $(pyenv init --path)
+# eval $(pyenv init --path)

@@ -1,1 +1,0 @@
-. $(pack completion --shell zsh)
