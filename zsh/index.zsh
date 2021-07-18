@@ -13,3 +13,11 @@ plugins=(fzf zsh-nvm zsh-z zsh-autosuggestions zsh-syntax-highlighting jenv)
 
 # Python
 # eval $(pyenv init --path)
+
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+export M2_HOME=/opt/maven
+export MAVEN_HOME=/opt/maven
+export PATH=${M2_HOME}/bin:${PATH}
