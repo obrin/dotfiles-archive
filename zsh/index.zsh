@@ -13,3 +13,5 @@ plugins=(fzf zsh-nvm zsh-z zsh-autosuggestions zsh-syntax-highlighting jenv)
 
 # Python
 eval $(pyenv init --path)
+
+export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
