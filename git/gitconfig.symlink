@@ -49,3 +49,5 @@
 	postBuffer = 524288000
 [init]
 	defaultBranch = main
+[credential]
+	helper = osxkeychain

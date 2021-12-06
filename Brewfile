@@ -48,3 +48,4 @@ brew 'composer'
 # Font
 tap 'homebrew/cask-fonts'
 cask 'font-hack-nerd-font'
+cask 'google-cloud-sdk'
