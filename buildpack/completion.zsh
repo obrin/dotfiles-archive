@@ -1,1 +1,1 @@
-. $(pack completion --shell zsh)
+# . $(pack completion --shell zsh)
