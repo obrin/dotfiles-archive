@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 if [ ! -d $ZSH ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 CUSTOM_DIR=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}
@@ -15,6 +15,10 @@ fi
 
 if [ ! -d $PLUGINS_DIR/zsh-syntax-highlighting ]; then 
   sh -c "$(git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGINS_DIR/zsh-syntax-highlighting)"
+fi
+
+if [ ! -d $PLUGINS_DIR/zsh-autosuggestions ]; then 
+  sh -c "$(git clone https://github.com/zsh-users/zsh-autosuggestions $PLUGINS_DIR/zsh-autosuggestions)"
 fi
 
 # THEMES
