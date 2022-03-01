@@ -22,7 +22,7 @@ brew 'lazydocker'
 #brew 'kubernetes-helm'
 #brew 'kubetail'
 brew 'kubectl'
-brew 'kube-ps1'
+brew 'kube-ps1' # Adds current context and namespace in bash prompt
 brew 'k9s'
 brew 'neovim'
 #brew 'python3'
@@ -39,8 +39,8 @@ brew 'fd' # alternative to find
 brew 'minikube'
 brew 'pyenv'
 brew 'jenv'
-tap 'AdoptOpenJDK/openjdk'
-brew 'adoptopenjdk/openjdk/adoptopenjdk11'
+# tap 'AdoptOpenJDK/openjdk'
+# brew 'adoptopenjdk/openjdk/adoptopenjdk11'
 
 # PHP
 brew 'composer'
