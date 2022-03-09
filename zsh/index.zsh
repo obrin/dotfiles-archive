@@ -9,9 +9,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf zsh-nvm zsh-z zsh-autosuggestions zsh-syntax-highlighting jenv)
+plugins=(fzf zsh-nvm zsh-z zsh-autosuggestions zsh-syntax-highlighting)
 
 # Python
 eval $(pyenv init --path)
 
-export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+# export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"

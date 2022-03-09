@@ -38,7 +38,7 @@ brew 'fd' # alternative to find
 #brew 'redis'
 brew 'minikube'
 brew 'pyenv'
-brew 'jenv'
+# brew 'jenv'
 # tap 'AdoptOpenJDK/openjdk'
 # brew 'adoptopenjdk/openjdk/adoptopenjdk11'
 
