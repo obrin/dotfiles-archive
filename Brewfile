@@ -25,6 +25,7 @@ brew 'kubectl'
 brew 'kube-ps1' # Adds current context and namespace in bash prompt
 brew 'k9s'
 brew 'neovim'
+brew 'httpie'
 #brew 'python3'
 #brew 'terraform'
 brew 'tmux'
