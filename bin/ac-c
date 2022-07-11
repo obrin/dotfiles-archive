@@ -1,0 +1,3 @@
+#!/bin/sh
+## Anyconnect
+printf '0\njy950f\n$(pass show wf)\n2\ny' | /opt/cisco/anyconnect/bin/vpn -s connect vpn.wayfair.io
