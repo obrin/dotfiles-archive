@@ -43,6 +43,7 @@ brew 'pyenv'
 # tap 'AdoptOpenJDK/openjdk'
 # brew 'adoptopenjdk/openjdk/adoptopenjdk11'
 brew 'pass'
+brew 'gh'
 
 # PHP
 brew 'composer'
