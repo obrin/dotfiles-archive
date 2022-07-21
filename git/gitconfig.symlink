@@ -43,8 +43,6 @@
 	email = jordanyong23@gmail.com
 [includeIf "gitdir:~/code/wayfair/"]
         path = ~/code/wayfair/.gitconfig
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [http]
 	postBuffer = 524288000
 [init]
