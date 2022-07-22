@@ -8,5 +8,6 @@ alias s='skaffold'
 alias v="nvim"
 alias c="code-insiders"
 alias bootstrap='$HOME/.dotfiles/script/bootstrap'
+alias ac='/opt/cisco/anyconnect/bin/vpn'
 
 # alias timeout="`gtimeout`"
