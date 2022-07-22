@@ -10,5 +10,6 @@ atom.symlink/blob-store
 atom.symlink/recovery
 
 git/gitconfig.local.symlink
+git/gitconfig.work.symlink
 
 Brewfile.lock.json

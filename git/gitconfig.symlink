@@ -3,6 +3,8 @@
 #        insteadOf = https://github.com/
 [include]
         path = ~/.gitconfig.local
+[includeIf "gitdir:~/code/wayfair/"]
+        path = ~/.gitconfig.work
 [hub]
         protocol = https
 [alias]
@@ -38,11 +40,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	name = obrin
-	email = jordanyong23@gmail.com
-[includeIf "gitdir:~/code/wayfair/"]
-        path = ~/code/wayfair/.gitconfig
 [http]
 	postBuffer = 524288000
 [init]
