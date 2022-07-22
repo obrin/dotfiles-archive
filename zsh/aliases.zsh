@@ -5,7 +5,6 @@ alias k="kubectl"
 alias t='terraform'
 alias i='istioctl'
 alias s='skaffold'
-alias c='code-insiders'
 alias v="nvim"
 alias c="code-insiders"
 alias bootstrap='$HOME/.dotfiles/script/bootstrap'
