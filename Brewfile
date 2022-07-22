@@ -22,6 +22,7 @@ brew 'lazydocker'
 #brew 'kubernetes-helm'
 #brew 'kubetail'
 brew 'kubectl'
+brew 'kubectx'
 brew 'kube-ps1' # Adds current context and namespace in bash prompt
 brew 'k9s'
 brew 'neovim'
