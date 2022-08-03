@@ -11,7 +11,4 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(fzf zsh-nvm zsh-z zsh-autosuggestions zsh-syntax-highlighting)
 
-# Python
-eval $(pyenv init --path)
-
 # export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
