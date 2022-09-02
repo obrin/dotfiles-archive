@@ -45,6 +45,7 @@ brew 'pyenv'
 # brew 'adoptopenjdk/openjdk/adoptopenjdk11'
 brew 'pass'
 brew 'gh'
+brew 'switchaudio-osx' # Switch audio from alfred workflow
 
 # PHP
 brew 'composer'
