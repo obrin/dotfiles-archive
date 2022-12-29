@@ -46,6 +46,7 @@ brew 'pyenv'
 brew 'pass'
 brew 'gh'
 brew 'switchaudio-osx' # Switch audio from alfred workflow
+brew 'rustup' # rust, multiple versions
 
 # PHP
 brew 'composer'
