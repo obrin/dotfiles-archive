@@ -7,6 +7,7 @@ alias i='istioctl'
 alias s='skaffold'
 alias v="nvim"
 alias c="code-insiders"
+alias ls="lsd"
 alias bootstrap='$HOME/.dotfiles/script/bootstrap'
 alias wake="caffeinate -u -t 28800" # 8 hours
 alias sleepnow="pmset sleepnow"

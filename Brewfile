@@ -47,6 +47,7 @@ brew 'pass'
 brew 'gh'
 brew 'switchaudio-osx' # Switch audio from alfred workflow
 brew 'rustup' # rust, multiple versions
+brew 'lsd' # improve readability for ls command
 
 # PHP
 brew 'composer'

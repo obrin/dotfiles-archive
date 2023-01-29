@@ -14,11 +14,12 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.local/share/nvim/plugged')
+# call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.config/nvim')
 
 " Core plugins
 Plug 'flazz/vim-colorschemes'
-
+our
 " Vim main plugins
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
